@@ -45,4 +45,10 @@ public class UserDAOImpl implements UserDAO {
             this.entityManager.remove(employee);
         }
     }
+
+    @Override
+    public User getUser(User user) {
+        return (User) this.entityManager.createNativeQuery("select * from users where first_name = :username and password=:password",User.class)
+                .setParameter("username",user.getFirstName()).setParameter("password",user.getPassword()).getSingleResult();
+    }
 }

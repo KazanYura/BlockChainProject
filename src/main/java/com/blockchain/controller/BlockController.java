@@ -16,10 +16,10 @@ public class BlockController {
     @Autowired
     private BlockManager blockManager;
 
-    @GetMapping(value = "/")
-    public ResponseEntity listBlocks() {
-        return ResponseEntity.ok(blockManager.getAllBlocks());
-    }
+//    @GetMapping(value = "/")
+//    public ResponseEntity listBlocks() {
+//        return ResponseEntity.ok(blockManager.getAllBlocks());
+//    }
 
     @PostMapping(value = "/add")
     public ResponseEntity addBlock(@RequestBody Block block) {

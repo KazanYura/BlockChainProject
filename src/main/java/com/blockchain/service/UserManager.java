@@ -10,6 +10,6 @@ public interface UserManager {
     List<User> getAllUsers();
 
     void deleteUser(Long userId);
-
+    User getUser(User user);
     boolean validateUser(User user);
 }

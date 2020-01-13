@@ -32,7 +32,7 @@ public class UserController {
     @GetMapping("/validate")
     public ResponseEntity validateUserWithRoute(@RequestBody User user){
         if (validateUser(user))
-            return ResponseEntity.ok(user);
+            return ResponseEntity.ok(this.userManager.getUser(user));
         else
             return ResponseEntity.status(404).body("User not found");
     }

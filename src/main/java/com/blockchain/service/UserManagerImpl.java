@@ -31,6 +31,11 @@ import org.springframework.transaction.annotation.Transactional;
         }
 
         @Override
+        public User getUser(User user) {
+            return userDAO.getUser(user);
+        }
+
+        @Override
         public boolean validateUser(User user) {
             return userDAO.validateUser(user);
         }

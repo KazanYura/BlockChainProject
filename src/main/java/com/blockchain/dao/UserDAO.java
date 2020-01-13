@@ -10,4 +10,6 @@ public interface UserDAO {
     List<User> getAllUsers();
     boolean validateUser(User user);
     void deleteUser(Long UserId);
+
+    User getUser(User user);
 }
