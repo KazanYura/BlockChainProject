@@ -6,15 +6,15 @@ To use this server you need to
 2. Create user **root** for your database with password **initial** or change settings in *hibernate.cfg.xml*
 3. Launch server.
 <br />
-## Routes <br />
+## Routes 
 All routes starts with *http://localhost:8080/* <br />
-### User part  <br />
-**/users/add** add user to database.(POST request) Request format  <br />
+### User part
+ **/users/add**  add user to database.(POST request) Request format  <br />
 { <br />
 	"firstName":"Username", <br />
 	"password":"Password" <br />
 } <br />
-**returns full user with id.** <br />
+ **returns full user with id.**  <br />
 Responce <br />
 { <br />
     "id": 1, <br />
