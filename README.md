@@ -41,7 +41,7 @@ Responce
 	"userId":3,  
 	"gameResults":42,  
 }  
-`
+`  
 **returns full info about block**  
 `{  
     "userId": 3,  
@@ -51,7 +51,7 @@ Responce
     "timeStamp": 1578946283884,  
     "hash": "dd547df5b82b9f74d53b860da20514643426750047197dfbab7f7a7358c98953"  
 }   
-`
+`  
 **blocks/hash** get block by hash (GET request) Request format  
 `{  
   "hash": "dd547df5b82b9f74d53b860da20514643426750047197dfbab7f7a7358c98953"  
@@ -66,7 +66,7 @@ Responce format<br />
     "timeStamp": 1578946283884,  
     "hash": "dd547df5b82b9f74d53b860da20514643426750047197dfbab7f7a7358c98953"  
 }<br />
-`
+`  
 **blocks/edit** edit existing block (PUT request) just for debug currently disabled.  
 Request format   
 `{  
