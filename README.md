@@ -5,9 +5,8 @@ To use this server you need to
 1. Create schema by using file **schema.sql** in **resources folder**
 2. Create user **root** for your database with password **initial** or change settings in *hibernate.cfg.xml*
 3. Launch server.
-<br />
-### Routes 
-All routes starts with <b>http://localhost:8080/</b> <br />
+## Routes 
+All routes starts with <b>http://localhost:8080/</b>
 ### User part <br />
  <b> /users/add</b> add user to database.(POST request) Request format  <br />
 { <br />
