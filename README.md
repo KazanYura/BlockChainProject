@@ -6,9 +6,9 @@ To use this server you need to
 2. Create user **root** for your database with password **initial** or change settings in *hibernate.cfg.xml*
 3. Launch server.
 ## Routes 
-All routes starts with <b>http://localhost:8080/</b>
-### User part
- <b> /users/add</b> add user to database.(POST request) Request format
+All routes starts with <b>http://localhost:8080/</b>  
+### User part  
+ <b> /users/add</b> add user to database.(POST request) Request format  
  `
 { 
 	"firstName":"Username",
