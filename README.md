@@ -7,14 +7,16 @@ To use this server you need to
 3. Launch server.
 ## Routes 
 All routes starts with <b>http://localhost:8080/</b>
-### User part <br />
- <b> /users/add</b> add user to database.(POST request) Request format  <br />
-{ <br />
-<	"firstName":"Username", <br />
-	"password":"Password" <br />
-} <br />
- **returns full user with id.**  <br />
-Responce <br />
+### User part
+ <b> /users/add</b> add user to database.(POST request) Request format
+ `
+{ 
+	"firstName":"Username",
+	"password":"Password"
+} 
+`
+ **returns full user with id.**
+Responce
 `{ <br />
     "id": 1, <br />
     "firstName": "Username", <br />
