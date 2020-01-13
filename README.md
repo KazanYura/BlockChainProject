@@ -8,8 +8,8 @@ To use this server you need to
 <br />
 ## Routes 
 All routes starts with *http://localhost:8080/* <br />
-### User part
- **/users/add**  add user to database.(POST request) Request format  <br />
+### User part <br />
+ <b> /users/add</b> add user to database.(POST request) Request format  <br />
 { <br />
 	"firstName":"Username", <br />
 	"password":"Password" <br />
