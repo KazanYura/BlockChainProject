@@ -15,11 +15,15 @@ public class Block {
     private int gameResults;
     @Column(name="prevHash")
     private String previousHash;
+    @Column(name="last")
+    private boolean last = true;
     @Column(name="timeStamp")
     private long timeStamp = new Date().getTime();
     @Id
     @Column(name="hash")
     private String hash = Hasher.applySha256(previousHash +Long.toString(timeStamp)+Integer.toString(userId*gameResults));
+
+
     public String getHash() {
         return hash;
     }
@@ -57,4 +61,11 @@ public class Block {
         this.previousHash = previousHash;
     }
 
+    public boolean isLast() {
+        return last;
+    }
+
+    public void setLast(boolean last) {
+        this.last = last;
+    }
 }

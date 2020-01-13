@@ -9,5 +9,7 @@ public interface UserManager {
 
     List<User> getAllUsers();
 
-    void deleteUser(Integer userId);
+    void deleteUser(Long userId);
+
+    boolean validateUser(User user);
 }

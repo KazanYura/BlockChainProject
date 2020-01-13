@@ -13,11 +13,6 @@ public class UserController {
     @Autowired
     private UserManager userManager;
 
-    @GetMapping(value = "/")
-    public ResponseEntity listUsers() {
-        return ResponseEntity.ok(userManager.getAllUsers());
-    }
-
     @PostMapping(value = "/add")
     public ResponseEntity addUser(@RequestBody User user) {
         userManager.addUser(user);
@@ -25,11 +20,25 @@ public class UserController {
     }
 
     @DeleteMapping("/delete")
-    public ResponseEntity deleteUser(@RequestBody Integer userId) {
-        userManager.deleteUser(userId);
-        return ResponseEntity.ok(userId);
+    public ResponseEntity deleteUser(@RequestBody User user) {
+        if (validateUser(user)){
+            userManager.deleteUser(user.getId());
+            return ResponseEntity.ok(user.getId());
+        }
+        else{
+            return ResponseEntity.status(404).body("User not found");
+        }
     }
-
+    @GetMapping("/validate")
+    public ResponseEntity validateUserWithRoute(@RequestBody User user){
+        if (validateUser(user))
+            return ResponseEntity.ok(user);
+        else
+            return ResponseEntity.status(404).body("User not found");
+    }
+    private boolean validateUser(User user){
+        return userManager.validateUser(user);
+    }
     public void setUserManager(UserManager userManager) {
         this.userManager = userManager;
     }

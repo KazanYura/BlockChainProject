@@ -26,9 +26,15 @@ import org.springframework.transaction.annotation.Transactional;
         }
         @Override
         @Transactional
-        public void deleteUser(Integer UserId) {
+        public void deleteUser(Long UserId) {
             userDAO.deleteUser(UserId);
         }
+
+        @Override
+        public boolean validateUser(User user) {
+            return userDAO.validateUser(user);
+        }
+
         public void setEmployeeDAO(UserDAO employeeDAO) {
             this.userDAO = employeeDAO;
         }

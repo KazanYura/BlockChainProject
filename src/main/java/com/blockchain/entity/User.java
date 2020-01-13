@@ -2,6 +2,7 @@ package com.blockchain.entity;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "users")
@@ -12,8 +13,10 @@ public class User {
     @Column(name = "id")
     private Long id;
     @Column(name = "first_name")
+    @NotNull
     private String firstName;
     @Column(name = "password")
+    @NotNull
     private String password;
 
     public String getFirstName() {

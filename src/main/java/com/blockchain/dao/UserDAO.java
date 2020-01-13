@@ -8,6 +8,6 @@ public interface UserDAO {
     void addUser(User employee);
 
     List<User> getAllUsers();
-
-    void deleteUser(Integer UserId);
+    boolean validateUser(User user);
+    void deleteUser(Long UserId);
 }
