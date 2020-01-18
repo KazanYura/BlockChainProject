@@ -2,6 +2,7 @@ package com.blockchain.controller;
 
 import com.blockchain.entity.User;
 import com.blockchain.service.UserManager;
+import com.blockchain.transaction.Wallet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,7 @@ public class UserController {
 
     @PostMapping(value = "/add")
     public ResponseEntity addUser(@RequestBody User user) {
+        user.setBalance((float) 100.0);
         userManager.addUser(user);
         return ResponseEntity.ok(user);
     }

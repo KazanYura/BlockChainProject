@@ -1,6 +1,8 @@
 package com.blockchain.entity;
 
 
+import com.blockchain.transaction.Wallet;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
@@ -18,11 +20,13 @@ public class User {
     @Column(name = "password")
     @NotNull
     private String password;
+    @Column(name="balance")
+    private float balance;
 
+    //private Wallet wallet;
     public String getFirstName() {
         return firstName;
     }
-
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -38,4 +42,13 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public float getBalance() {
+        return balance;
+    }
+
+    public void setBalance(float balance) {
+        this.balance = balance;
+    }
+
 }
