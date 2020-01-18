@@ -92,7 +92,7 @@ public class GameController {
     @GetMapping(value="/roll")
     public ResponseEntity generateVictoryNumber(@RequestBody Bet game) {
         GameResults gameResults = new GameResults();
-        gameResults.setGameRes(10);
+        gameResults.setGameRes(new Random().nextInt(36));
         gameResults.setGame(validateGame(game.getGameHash()));
         for (Bet b : bets) {
             if (b.getNumber() == gameResults.gameRes) {
