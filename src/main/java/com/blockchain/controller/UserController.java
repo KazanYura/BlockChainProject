@@ -2,7 +2,6 @@ package com.blockchain.controller;
 
 import com.blockchain.entity.User;
 import com.blockchain.service.UserManager;
-import com.blockchain.transaction.Wallet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -31,7 +30,7 @@ public class UserController {
             return ResponseEntity.status(404).body("User not found");
         }
     }
-    @GetMapping("/validate")
+    @PostMapping("/validate")
     public ResponseEntity validateUserWithRoute(@RequestBody User user){
         if (validateUser(user))
             return ResponseEntity.ok(this.userManager.getUser(user));

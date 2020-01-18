@@ -32,7 +32,7 @@ public class GameController {
     private ArrayList<Game> games = new ArrayList<>();
     private ArrayList<UserGameHolder> userGameHolders = new ArrayList<>();
     private ArrayList<Bet> bets = new ArrayList<>();
-    @GetMapping("/search")
+    @PostMapping("/search")
     public ResponseEntity searchForGame(@RequestBody User user){
 
         if (validateUser(user))
@@ -60,14 +60,14 @@ public class GameController {
     private boolean validateUser(User user){
         return !userManager.validateUser(user);
     }
-    @GetMapping(value = "/getgame")
+    @PostMapping(value = "/getgame")
     public ResponseEntity getGame(@RequestBody Game game){
         for (Game g:games)
             if (g.getHash().equals(game.getHash()))
                 return ResponseEntity.ok(g);
             return ResponseEntity.notFound().build();
     }
-    @PostMapping(value="makebet")
+    @PostMapping(value="/makebet")
     public ResponseEntity makeBet(@RequestBody Bet bet){
         User u = new User();
         u.setFirstName(bet.getUserId());
@@ -89,7 +89,7 @@ public class GameController {
         }
         return ResponseEntity.ok(validateGame(bet.getGameHash()));
     }
-    @GetMapping(value="/roll")
+    @PostMapping(value="/roll")
     public ResponseEntity generateVictoryNumber(@RequestBody Bet game) {
         GameResults gameResults = new GameResults();
         gameResults.setGameRes(new Random().nextInt(36));
