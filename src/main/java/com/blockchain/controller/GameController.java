@@ -15,7 +15,6 @@ import com.blockchain.transaction.Wallet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -45,9 +44,11 @@ public class GameController {
             games.add(new Game());
         for (Game g: games)
             if (g.isEmptySpace()) {
-                g.addPlayer(ed_user);
-                userGameHolders.add(ed_user);
-                sendMoney(ed_user.getWallet(),g.wallet,user.getBalance());
+                if (!g.getUsers().contains(userManager.getUser(user))) {
+                    g.addPlayer(ed_user);
+                    userGameHolders.add(ed_user);
+                    sendMoney(ed_user.getWallet(), g.wallet, user.getBalance());
+                }
                 return ResponseEntity.ok(g);
             }
             Game game = new Game();
